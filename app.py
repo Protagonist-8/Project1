@@ -87,4 +87,8 @@ if img:
     output=model(img_tensor)
   pred_class=output.argmax(dim=1).item()
 
-  st.write(f'Predicted disease: {class_dict[pred_class]}')
+  label=class_dict[pred_class]
+  if(label=='FreshLeaf'):
+    st.write("The Leaf is healthy!")
+  else:
+    st.write(f'Predicted disease: {label}')
